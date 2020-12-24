@@ -16,4 +16,8 @@ export class EstudianteService {
   updateStudent(student: Estudiante, id:string){
     this.firestore.doc('estudiante/'+id).update(student);
   }
+
+  createStudent(student: Estudiante){
+    return this.firestore.collection('estudiante').add(student);
+  }
 }
