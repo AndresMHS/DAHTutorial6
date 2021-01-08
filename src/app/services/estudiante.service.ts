@@ -20,4 +20,9 @@ export class EstudianteService {
   createStudent(student: Estudiante){
     return this.firestore.collection('estudiante').add(student);
   }
+
+  deleteStudent(id:string){
+    this.firestore.doc('estudiante/'+id).delete();
+  }
+
 }

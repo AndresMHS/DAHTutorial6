@@ -55,4 +55,19 @@ export class DetailPage implements OnInit {
     this.studentService.createStudent(this.student);
   }
 
+  delete(id:string){
+    this.service.deleteStudent(id);
+    this.presentToast();
+    this.router.navigate(['/']);
+  }
+
+  async presentToast(){
+    const t = await this.toast.create({
+      message: "Estudiante eliminado",
+      duration: 2000
+    });
+
+    t.present();
+  }
+
 }
